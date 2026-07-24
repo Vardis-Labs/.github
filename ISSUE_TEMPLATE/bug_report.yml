@@ -1,0 +1,65 @@
+name: Bug report
+description: Report a reproducible problem in a Vartari Labs project
+title: "[Bug]: "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for reporting a problem. Remove secrets, credentials, private data, and sensitive paths from all logs and screenshots.
+
+  - type: input
+    id: project-version
+    attributes:
+      label: Project and version
+      description: Which project, release, branch, or commit is affected?
+      placeholder: "LaionSpeech v0.4.0 or commit abc123"
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem description
+      description: Describe what happened and what you expected instead.
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Start the application
+        2. Open...
+        3. Click...
+        4. Observe...
+    validations:
+      required: true
+
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: Include operating system, hardware, runtime versions, model, and relevant configuration without secrets.
+      placeholder: "macOS, Apple Silicon, Node.js, Python, model name..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs or screenshots
+      description: Paste relevant logs or attach screenshots after removing sensitive information.
+      render: shell
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Confirmation
+      options:
+        - label: I searched for an existing issue describing this problem.
+          required: true
+        - label: I removed credentials, tokens, personal data, and other sensitive information.
+          required: true
